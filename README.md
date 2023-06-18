@@ -12,3 +12,7 @@
 8. Update the app.py
 
 Building a Text Summarizer with pipeline in python.
+
+
+## ECR repo
+ - 919002583521.dkr.ecr.eu-north-1.amazonaws.com/narysummarizer
