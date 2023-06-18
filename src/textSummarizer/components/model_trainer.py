@@ -37,7 +37,7 @@ class ModelTrainer:
         trainer = Trainer(
             model=model,
             args=training_args,
-            train_dataset=dataset["test"], # Just for skipping the high training time... change it to "train" for actual training
+            train_dataset=dataset["train"], # Just for skipping the high training time... change it to "train" for actual training
             eval_dataset=dataset["validation"],
             data_collator=seq2seq_data_collector,
             tokenizer=tokenizer,
