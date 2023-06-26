@@ -4,6 +4,7 @@ from textSummarizer.pipeline.stage_02_data_validation import DataValidationPipel
 from textSummarizer.pipeline.stage_03_data_transformation import DataTransformationPipeline
 from textSummarizer.pipeline.stage_04_model_trainer import ModelTrainerPipeline
 from textSummarizer.pipeline.stage_05_model_evaluation import ModelEvaluationPipeline
+from textSummarizer.pipeline.prediction import PredictionPipeline
 
 STAGE_NAME = "Data  Ingestion stage"
 

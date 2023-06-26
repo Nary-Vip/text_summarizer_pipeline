@@ -1,8 +1,5 @@
 from textSummarizer.config.configuration import ConfigurationManager
 from transformers import AutoTokenizer, pipeline
-
-    
-    
     
 class PredictionPipeline:
     def __init__(self):

@@ -6,7 +6,7 @@ import uvicorn
 from starlette.responses import RedirectResponse
 from fastapi.responses import Response
 from textSummarizer.pipeline.prediction import PredictionPipeline
-
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -29,11 +29,14 @@ async def train():
     except Exception as e:
         return Response(e)
     
-@app.get("/predict")
-async def predict(text:str):
+class PredictionInputModal(BaseModel):
+    text:str
+
+@app.post("/predict")
+async def predict(text:PredictionInputModal):
     try:
         prediction = PredictionPipeline()
-        summary = prediction.predict(text)
+        summary = prediction.predict(text.text)
         return summary
     
     except Exception as e:
