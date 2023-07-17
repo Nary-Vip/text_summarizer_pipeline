@@ -31,12 +31,13 @@ async def train():
     
 class PredictionInputModal(BaseModel):
     text:str
+    maxLength:int
 
 @app.post("/predict")
 async def predict(text:PredictionInputModal):
     try:
         prediction = PredictionPipeline()
-        summary = prediction.predict(text.text)
+        summary = prediction.predict(text.text, text.maxLength)
         return summary
     
     except Exception as e:
